@@ -1,0 +1,22 @@
+=head2 Wed Apr 22 18:16:42 2020: C<Module> L<Promise::ES6|Promise::ES6>
+
+=over 4
+
+=item *
+
+C<installed into: /home/allter/src/PromiseUtil/local_lib/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.22>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+

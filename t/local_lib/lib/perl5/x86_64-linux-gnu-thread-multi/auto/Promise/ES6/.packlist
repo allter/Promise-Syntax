@@ -1,0 +1,15 @@
+/home/allter/src/PromiseUtil/local_lib/lib/perl5/Promise/ES6.pm
+/home/allter/src/PromiseUtil/local_lib/lib/perl5/Promise/ES6/AnyEvent.pm
+/home/allter/src/PromiseUtil/local_lib/lib/perl5/Promise/ES6/Backend/PP.pm
+/home/allter/src/PromiseUtil/local_lib/lib/perl5/Promise/ES6/Event/AnyEvent.pm
+/home/allter/src/PromiseUtil/local_lib/lib/perl5/Promise/ES6/Event/IOAsync.pm
+/home/allter/src/PromiseUtil/local_lib/lib/perl5/Promise/ES6/Event/MojoIOLoop.pm
+/home/allter/src/PromiseUtil/local_lib/lib/perl5/Promise/ES6/EventLoopBase.pm
+/home/allter/src/PromiseUtil/local_lib/lib/perl5/Promise/ES6/Future.pm
+/home/allter/src/PromiseUtil/local_lib/lib/perl5/Promise/ES6/IOAsync.pm
+/home/allter/src/PromiseUtil/local_lib/lib/perl5/Promise/ES6/Mojo.pm
+/home/allter/src/PromiseUtil/local_lib/man/man3/Promise::ES6.3pm
+/home/allter/src/PromiseUtil/local_lib/man/man3/Promise::ES6::AnyEvent.3pm
+/home/allter/src/PromiseUtil/local_lib/man/man3/Promise::ES6::Future.3pm
+/home/allter/src/PromiseUtil/local_lib/man/man3/Promise::ES6::IOAsync.3pm
+/home/allter/src/PromiseUtil/local_lib/man/man3/Promise::ES6::Mojo.3pm
