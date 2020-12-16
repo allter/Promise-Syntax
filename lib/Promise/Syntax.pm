@@ -4,7 +4,7 @@ use strict;
 
 =head1 NAME
 
-Promise::Syntax - Some utility syntax for Promise`s.
+Promise::Syntax - async/await syntax implemented as pure perl
 
 =cut
 
@@ -33,6 +33,12 @@ It provides async/await syntax which is available in other languages but without
 
 Note that you can supply pure values in the place of promises in await { }.
 If there are no true promise/then`ables then the $result_promise is also a pure value.
+If you need a real promise, just wrap it with resolve( ... ) from your favorite Promise class.
+
+	my $result = async as { 42 }; # Effectively: my $result = 42;
+
+	# Effectively: my $result2 = 42;
+	my $result2 = async await { v1 => 40 }, await { v2 => 2 }, as { $_->{v1} + $_->{v2} };
 
 =cut
 
