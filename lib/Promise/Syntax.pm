@@ -22,15 +22,14 @@ use Storable qw(dclone); # Might change from dclone in future
 
 =head2 async
 
-Utility function performing chained computations possibly based on Promises or other 'then'able objects.
-This mimicks async/await syntax which is available in other languages but without any extra support from the Perl language.
+Utility function performing chained computations which are possibly based on Promises or other 'then'able objects.
+It provides async/await syntax which is available in other languages but without any extra support for it from the Perl language.
 
 	my $result_promise = async
 		await { v1 => promise1() },
 		await { v2 => promise2( $_->{v1} ) },
 		await { _ => log_promise( "acquired values: ".join( ', ', @$_{ qw(v1 v2) } ) ) },
-		as { [ @$_{ qw(v1 v2) } ] }, # Values that will be returned by the $result_promise
-		;
+		as { $_->{v1} + $_->{v2} }; # Value that will be returned by the $result_promise
 
 Note that you can supply pure values in the place of promises in await { }.
 If there are no true promise/then`ables then the $result_promise is also a pure value.
@@ -100,7 +99,7 @@ sub await ( & ) {
 
 		my $stash = $_
 			or die( "No <stash> when evaluating 'await { $symbol => <promise> }' construct "._caller_line( @caller ) );
-		die "'symbol' $symbol already exists in <stash> in 'await { $symbol => <promise> }' construct "._caller_line( @caller )
+		die "$symbol symbol already exists in async <stash> in 'await { $symbol => <promise> }' construct "._caller_line( @caller )
 			if exists $stash->{ $symbol };
 
 		my $caller_sub = (caller(1))[3];
