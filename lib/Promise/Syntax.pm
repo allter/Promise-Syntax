@@ -83,7 +83,7 @@ sub _dop {
 
 =head2 await
 
-Defines a chain step handler.
+Defines a chain step handler. It's only meaningful as an argument to async(...).
 
 The code suspended in await { ... } block must return two values, a symbol and a promise.
 This code also has access to $_ stash which contains symbol values from previous steps of this async computation.
@@ -132,7 +132,7 @@ sub await ( & ) {
 
 =head2 as
 
-This is simply a syntax for a final step of chained computations.
+This is simply a syntax for a final step of chained computations. It's only meaningful as a last argument to async(...).
 
 The code suspended in as { ... } block simply should transform the $_ stash from previous await chain handlers.
 
@@ -147,6 +147,7 @@ sub as ( & ) {
 =head2 as_hash
 
 Simple shorthand to return all symbols as a hash ref for a final step of chained computations.
+It's only meaningful as a last argument to async(...).
 
 Currently this is simply a shorthand for:
 
