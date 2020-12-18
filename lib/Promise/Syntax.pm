@@ -42,8 +42,7 @@ If you need a real promise, just wrap it with resolve( ... ) from your favorite 
 
 =cut
 
-sub async ( @ )
-{
+sub async ( @ ) {
 	my $as_ref = pop;
 	croak "No arguments to 'async'" unless $as_ref;
 	croak "Last argument to 'async' must be 'as { ... }'" unless UNIVERSAL::isa( $as_ref, 'Promise::Syntax::_As' );
@@ -56,8 +55,8 @@ sub async ( @ )
 	return _dop( {}, @_, $as_ref );
 }
 
-sub _dop
-{
+# _dop subroutine actually calls chained handlers (possibly from callbacks supplied to ->then of previous steps. It's not meant to be used from outside.
+sub _dop {
 	local $_ = shift;
 	my $code = shift;
 
