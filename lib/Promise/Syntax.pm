@@ -48,7 +48,7 @@ sub async ( @ ) {
 	croak "Last argument to 'async' must be 'as { ... }'" unless UNIVERSAL::isa( $as_ref, 'Promise::Syntax::_As' );
 
 	foreach ( @_ ) {
-		croak "Arguments to 'async' must be await { <sym1> => promise1() }, await { <symN> => promiseN(); }, as { ... }"
+		croak "Arguments to 'async' must be await { <sym1> => promise1() }, ..., await { <symN> => promiseN(); }, as { ... }"
 			unless UNIVERSAL::isa( $_, 'Promise::Syntax::_Await' );
 	}
 
